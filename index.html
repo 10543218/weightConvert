@@ -10,6 +10,20 @@
 				text-align: left;
 				font-size: 24px;
 			}
+			
+			#restart{
+				width: 90px;
+				height: 40px;
+				background-color: #CCCCFF;
+				border-style: solid;
+				border-color: #fff;
+				margin-top: 10px;
+			}
+			
+			#restart:hover{
+				background-color: #5555FF;
+				color: white;
+			}
 		</style>
 	</head>
 	<body>
@@ -22,7 +36,7 @@
 		var q2 = 0;
 		var unit = 0;
 		
-		num=prompt("請問要出幾題?");
+		num=prompt("請問要我輸出幾題題目?(請輸入阿拉伯數字)");
 		
 		for(var i=0; i<num; i++){
 			q1 = getRandomInt(9100)+100;
@@ -32,24 +46,42 @@
 			
 			switch(unit){
 				case 1:{
-					document.write("<div class='q'> ("+(i+1)+")&nbsp"+q1+"公斤=(&nbsp&nbsp&nbsp?&nbsp&nbsp&nbsp)公噸");
+					document.write("<div class='q'> ("+(i+1)+")&nbsp"+q1+"公斤=(&nbsp&nbsp&nbsp?&nbsp&nbsp&nbsp)公噸</div>");
 					break;
 				}
 				case 2:{
-					document.write("<div class='q'> ("+(i+1)+")&nbsp"+q1+"公克=(&nbsp&nbsp&nbsp?&nbsp&nbsp&nbsp)公斤");
+					document.write("<div class='q'> ("+(i+1)+")&nbsp"+q1+"公克=(&nbsp&nbsp&nbsp?&nbsp&nbsp&nbsp)公斤</div>");
 					break;
 				}
 				case 3:{
-					document.write("<div class='q'> ("+(i+1)+")&nbsp"+q1+"公噸=(&nbsp&nbsp&nbsp?&nbsp&nbsp&nbsp)公斤");
+					document.write("<div class='q'> ("+(i+1)+")&nbsp"+q1+"公噸=(&nbsp&nbsp&nbsp?&nbsp&nbsp&nbsp)公斤</div>");
 					break;
 				}
 				case 4:{
-					document.write("<div class='q'> ("+(i+1)+")&nbsp"+q1+"公斤=(&nbsp&nbsp&nbsp?&nbsp&nbsp&nbsp)公克");
+					document.write("<div class='q'> ("+(i+1)+")&nbsp"+q1+"公斤=(&nbsp&nbsp&nbsp?&nbsp&nbsp&nbsp)公克</div>");
 					break;
 				}
 			}
 			
 		}
+		
+		document.write("<div class='q'><input type='button' value='重出題目' id='restart'/></div>");
+		
+		
+		const restart = document.getElementById('restart');
+		
+		restart.addEventListener('click',
+		function(e){
+			window.location.reload();
+	
+			 
+			 /*  console.log(e.currentTarget)
+			  console.log(e.target)
+			  console.log(e.type)
+			  console.log(e.bubbles)
+			  console.log(e.cancelable)
+			  e.stopPropagation() */
+		},false);
 		
 		
 		function getRandomInt(max) {
