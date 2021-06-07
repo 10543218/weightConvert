@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="zh-tw">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no, user-scalable=no">
+		<title>重量單位換算</title>
+		
+		<style type="text/css">
+			.q{
+				text-align: left;
+				font-size: 24px;
+			}
+		</style>
+	</head>
+	<body>
+		<div style="font-size: 40px;text-align:center">重量單位換算</div>
+		<div style="font-size: 40px;text-align:center">作者:小李</div>
+		<br>
+	</body>
+	<script type="text/javascript">
+		var q1 = 0;
+		var q2 = 0;
+		var unit = 0;
+		
+		num=prompt("請問要出幾題?");
+		
+		for(var i=0; i<num; i++){
+			q1 = getRandomInt(9100)+100;
+			unit = getRandomInt(4)+1;
+			
+			console.log("q1: "+q1+",unit: "+unit);
+			
+			switch(unit){
+				case 1:{
+					document.write("<div class='q'> ("+(i+1)+")&nbsp"+q1+"公斤=(&nbsp&nbsp&nbsp?&nbsp&nbsp&nbsp)公噸");
+					break;
+				}
+				case 2:{
+					document.write("<div class='q'> ("+(i+1)+")&nbsp"+q1+"公克=(&nbsp&nbsp&nbsp?&nbsp&nbsp&nbsp)公斤");
+					break;
+				}
+				case 3:{
+					document.write("<div class='q'> ("+(i+1)+")&nbsp"+q1+"公噸=(&nbsp&nbsp&nbsp?&nbsp&nbsp&nbsp)公斤");
+					break;
+				}
+				case 4:{
+					document.write("<div class='q'> ("+(i+1)+")&nbsp"+q1+"公斤=(&nbsp&nbsp&nbsp?&nbsp&nbsp&nbsp)公克");
+					break;
+				}
+			}
+			
+		}
+		
+		
+		function getRandomInt(max) {
+			return Math.floor(Math.random() * max);
+		}
+			
+	</script>
+</html>
+
+
+
+
